@@ -37,9 +37,9 @@ other ones; I hope you like it."
   (interactive)
   (color-theme-install
    '(color-theme-lss
-     ((foreground-color . "#c0c0c0")
+     ((foreground-color . "LightGray")
       (background-color . "black")
-      (mouse-color . "black")
+      (mouse-color . "DarkSlateBlue")
       (cursor-color . "medium turquoise")
       (border-color . "black")
       (background-mode . dark))
@@ -48,7 +48,7 @@ other ones; I hope you like it."
      (modeline-buffer-id ((t (:foreground "white" :background "darkslateblue"))))
      (modeline-mousable ((t (:foreground "white" :background "darkslateblue"))))
      (modeline-mousable-minor-mode ((t (:foreground "white" :background "darkslateblue"))))
-     (highlight ((t (:foreground "black" :background "#c0c0c0"))))
+     (highlight ((t (:background "#222222"))))
      (bold ((t (:bold t))))
      (italic ((t (:italic t))))
      (bold-italic ((t (:bold t :italic t))))
