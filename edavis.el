@@ -28,6 +28,12 @@
 ; No scroll please
 (scroll-bar-mode -1)
 
+;; Always wordwrap
+(setq truncate-partial-width-windows nil)
+
+; no autofills please
+(setq auto-fill-mode 0)
+
 ; format the title-bar to always include the buffer name
 (setq frame-title-format (list "" "emacs" ": %f" ))
 
