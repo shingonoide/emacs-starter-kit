@@ -176,4 +176,4 @@ other ones; I hope you like it."
      (sgml-entity-face ((t (:foreground "gold"))))
      (flyspell-incorrect-face ((t (:foreground "OrangeRed" :bold t :underline t))))
      (flyspell-duplicate-face ((t (:foreground "Gold3" :bold t :underline t))))
-     (mumamo-background-chunk-submode ((t (:background "gray15" :slant italic)))))))
+     (mumamo-background-chunk-submode ((t (:background "gray15" )))))))
