@@ -60,3 +60,5 @@
           (dabbrev-expand nil)
         (indent-for-tab-command)))))
 
+
+(add-to-list 'auto-mode-alist '("\\.liquid$" . nxhtml-mode))
