@@ -60,7 +60,9 @@
    ("^2[a-z]? .*$" 0 todo-list-two-face t)
    ("^3[a-z]? .*$" 0 todo-list-three-face t)
    ("^4[a-z]? .*$" 0 todo-list-four-face t)
-   ("^C .*$"0	todo-list-complete-face t)
+   ("^A[a-z]? .*$" 0 todo-list-annual-face t)
+   ("^L[a-z]? .*$" 0 todo-list-life-face t)
+   ("^X .*$"0	todo-list-complete-face t)
    ("#.*$" 0 font-lock-comment-face t)
    ("#[\-_A-Za-z0-9]+" 0 todo-list-hashtag-face t)
 ))
@@ -76,7 +78,7 @@
 ;;define custom faces for todo-list mode
 ;;
 (defface todo-list-zero-face'(
-  (((class color) (background dark)) (:foreground "white" :slant italic))
+  (((class color) (background dark)) (:foreground "dark grey" :slant italic))
   (((class color) (background light)) (:foreground "black" :slant italic))
   (t (:bold t :italic t)))
   "Todo-List mode face used for level 0 task."
@@ -85,8 +87,8 @@
   "Todo-List mode face used for level 0 task.")
 
 (defface todo-list-one-face'(
-  (((class color) (background dark))	(:foreground "IndianRed1"))
-  (((class color) (background light))	(:foreground "Red3"))
+  (((class color) (background dark))	(:foreground "Red"))
+  (((class color) (background light))	(:foreground "Red"))
   (t (:bold t :italic t)))
   "Todo-List mode face used for level 1 task."
   :group 'todo-list-mode-highlighting-faces)
@@ -94,8 +96,8 @@
   "Todo-List mode face used for level 1 task.")
 
 (defface todo-list-two-face'(
-  (((class color) (background dark))	(:foreground "CadetBlue2"))
-  (((class color) (background light))	(:foreground "Blue3"))
+  (((class color) (background dark))	(:foreground "IndianRed1"))
+  (((class color) (background light))	(:foreground "Red3"))
   (t (:bold t :italic t)))
   "Todo-List mode face used for level 2 task."
   :group 'todo-list-mode-highlighting-faces)
@@ -103,8 +105,8 @@
   "Todo-List mode face used for level 2 task.")
 
 (defface todo-list-three-face'(
-  (((class color) (background dark))	(:foreground "MistyRose2"))
-  (((class color) (background light))	(:foreground "DarkOrange3"))
+  (((class color) (background dark))	(:foreground "white"))
+  (((class color) (background light))	(:foreground "white"))
   (t (:bold t :italic t)))
   "Todo-List mode face used for level 3 task."
   :group 'todo-list-mode-highlighting-faces)
@@ -112,13 +114,31 @@
   "Todo-List mode face used for level 3 task.")
 
 (defface todo-list-four-face'(
-  (((class color) (background dark))	(:foreground "LightSteelBlue1"))
-  (((class color) (background light))	(:foreground "DodgerBlue2"))
+  (((class color) (background dark))	(:foreground "grey60"))
+  (((class color) (background light))	(:foreground "grey60"))
   (t (:bold t :italic t)))
   "Todo-List mode face used for level 4 task."
   :group 'todo-list-mode-highlighting-faces)
 (defvar todo-list-four-face 'todo-list-four-face
   "Todo-List mode face used for level 4 task.")
+
+(defface todo-list-annual-face'(
+  (((class color) (background dark))	(:foreground "#00ff00" :bold t))
+  (((class color) (background light))	(:foreground "#00ff00" :bold t))
+  (t (:bold t :italic t)))
+  "Todo-List mode face used for annual level task."
+  :group 'todo-list-mode-highlighting-faces)
+(defvar todo-list-annual-face 'todo-list-annual-face
+  "Todo-List mode face used for annual level task.")
+
+(defface todo-list-life-face'(
+  (((class color) (background dark))	(:foreground "#00ff00"))
+  (((class color) (background light))	(:foreground "#00ff00"))
+  (t (:bold t :italic t)))
+  "Todo-List mode face used for life task."
+  :group 'todo-list-mode-highlighting-faces)
+(defvar todo-list-life-face 'todo-list-life-face
+  "Todo-List mode face used for life task.")
 
 (defface todo-list-complete-face'(
   (((class color) (background dark))	(:foreground "gray22"))
@@ -130,10 +150,12 @@
   "Todo-List mode face used for completed task.")
 
 (defface todo-list-hashtag-face'(
+  (((class color) (background dark))	(:foreground "#4186be" :underline t))
+  (((class color) (background light))	(:foreground "#4186be" :underline t))
   (t (:bold t :italic t :underline t)))
   "Todo-List mode face used by hashtags."
   :group 'todo-list-mode-highlighting-faces)
-(defvar todo-list-hashtag-face 'todo-list-tag-face
+(defvar todo-list-hashtag-face 'todo-list-hashtag-face
   "Todo-List mode face used by hashtags.")
 
 
