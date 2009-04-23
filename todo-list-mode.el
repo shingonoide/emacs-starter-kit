@@ -55,13 +55,14 @@
 (setq todo-list-highlight-regexps '(
    ;;regexp keyword matches:
    ;;beg line|number|letter?|tab|any char|any chars|end line
-   ("^0[a-z]?\t.*$" 0 todo-list-zero-face t)
-   ("^1[a-z]?\t.*$" 0 todo-list-one-face t)
-   ("^2[a-z]?\t.*$" 0 todo-list-two-face t)
-   ("^3[a-z]?\t.*$" 0 todo-list-three-face t)
-   ("^4[a-z]?\t.*$" 0 todo-list-four-face t)
-   ("^C\t.*$"0	todo-list-complete-face t)
+   ("^0[a-z]? .*$" 0 todo-list-zero-face t)
+   ("^1[a-z]? .*$" 0 todo-list-one-face t)
+   ("^2[a-z]? .*$" 0 todo-list-two-face t)
+   ("^3[a-z]? .*$" 0 todo-list-three-face t)
+   ("^4[a-z]? .*$" 0 todo-list-four-face t)
+   ("^C .*$"0	todo-list-complete-face t)
    ("#.*$" 0 font-lock-comment-face t)
+   ("#[\-_A-Za-z0-9]+" 0 todo-list-hashtag-face t)
 ))
 
 (define-derived-mode todo-list-mode fundamental-mode
@@ -127,6 +128,13 @@
   :group 'todo-list-mode-highlighting-faces)
 (defvar todo-list-complete-face 'todo-list-complete-face
   "Todo-List mode face used for completed task.")
+
+(defface todo-list-hashtag-face'(
+  (t (:bold t :italic t :underline t)))
+  "Todo-List mode face used by hashtags."
+  :group 'todo-list-mode-highlighting-faces)
+(defvar todo-list-hashtag-face 'todo-list-tag-face
+  "Todo-List mode face used by hashtags.")
 
 
 (provide 'todo-list-mode)
