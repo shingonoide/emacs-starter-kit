@@ -61,6 +61,7 @@
    ("^3[a-z]? .*$" 0 todo-list-three-face t)
    ("^4[a-z]? .*$" 0 todo-list-four-face t)
    ("^A[a-z]? .*$" 0 todo-list-annual-face t)
+   ("^D[a-z]? .*$" 0 todo-list-dream-face t)
    ("^L[a-z]? .*$" 0 todo-list-life-face t)
    ("^X .*$"0	todo-list-complete-face t)
    ("#.*$" 0 font-lock-comment-face t)
@@ -130,6 +131,15 @@
   :group 'todo-list-mode-highlighting-faces)
 (defvar todo-list-annual-face 'todo-list-annual-face
   "Todo-List mode face used for annual level task.")
+
+(defface todo-list-dream-face'(
+  (((class color) (background dark))	(:foreground "#00ff00" :italic t))
+  (((class color) (background light))	(:foreground "#00ff00" :italic t))
+  (t (:bold t :italic t)))
+  "Todo-List mode face used for dream level task."
+  :group 'todo-list-mode-highlighting-faces)
+(defvar todo-list-dream-face 'todo-list-dream-face
+  "Todo-List mode face used for dream level task.")
 
 (defface todo-list-life-face'(
   (((class color) (background dark))	(:foreground "#00ff00"))
