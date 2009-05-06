@@ -30,6 +30,7 @@
 
 ;; Always wordwrap
 (setq truncate-partial-width-windows nil)
+(setq word-wrap t)
 
 ; no autofills please
 (setq auto-fill-mode 0)
@@ -62,3 +63,20 @@
 
 
 (add-to-list 'auto-mode-alist '("\\.liquid$" . nxhtml-mode))
+
+
+(autoload 'todo-list-mode "todo-list-mode") ;load when needed
+ 
+;a simple function that opens the file,
+;and switches to todo-list-mode.
+(defun open-todo-list ()
+  (interactive)
+  (find-file "~/TODO")
+  (todo-list-mode))
+ 
+;then bind to control-f12 so i can call it with one keystroke
+;this works well for me because i also bind calendar to f12
+;(global-set-key [C-f12] 'open-todo-list)
+
+(setq auto-mode-alist (cons '("\\.todo$" . todo-list-mode) auto-mode-alist))
+
