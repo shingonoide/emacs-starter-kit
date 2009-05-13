@@ -62,3 +62,14 @@
 
 
 (add-to-list 'auto-mode-alist '("\\.liquid$" . nxhtml-mode))
+(setenv "ESHELL" (expand-file-name "~/bin/eshell"))
+
+;; geben debug
+(add-to-list 'load-path "/Users/shingo/elisp/geben")
+(add-to-list 'load-path "/Users/shingo/elisp/geben/gud")
+
+;; shell-mode
+(defun shell ()
+  (interactive)
+  (ansi-term "/bin/zsh"))
+    

@@ -466,9 +466,9 @@ Major mode for editing PHP code.
 (defvar php-file-patterns '("\\.php[s34]?\\'" "\\.phtml\\'" "\\.inc\\'") "\
 List of file patterns for which to automatically invoke `php-mode'.")
 
-(custom-autoload 'php-file-patterns "../related/php-mode-2008-10-23" nil)
+(custom-autoload 'php-file-patterns "../related/php-mode" nil)
 
-(autoload 'php-mode "../related/php-mode-2008-10-23" "\
+(autoload 'php-mode "../related/php-mode" "\
 Major mode for editing PHP code.
 
 \\{php-mode-map}
