@@ -13,7 +13,7 @@
 (setq-default indent-tabs-mode nil)
 
 ; Set current tabs to 2
-(setq default-tab-width 4)
+(setq default-tab-width 2)
 
 ; Syntax highlight please
 (global-font-lock-mode t)
