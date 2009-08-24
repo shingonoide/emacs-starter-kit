@@ -80,3 +80,20 @@
 
 (setq auto-mode-alist (cons '("\\.todo$" . todo-list-mode) auto-mode-alist))
 
+;; Time inserts
+(defun insert-time ()
+  "2007-09-03-20:54"
+  (interactive)
+  (insert (format-time-string "%Y-%m-%d-%R")))
+
+;; ISO time
+(defun insert-time-ISO ()
+  "2007-09-03"
+  (interactive)
+  (insert (format-time-string "%Y-%m-%d")))
+
+;; Emacs macro to sort the todo list
+(fset 'sort-todo
+      [?\M-< ?\C-  ?\M-> ?\M-x ?s ?o ?r ?t ?- ?l ?i ?n ?e ?s return])
+
+
