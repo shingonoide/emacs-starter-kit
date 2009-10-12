@@ -41,6 +41,8 @@
 (setq auto-mode-alist (cons '("\\.mdwn$" . markdown-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.page$" . markdown-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.eml$" . markdown-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.md$" . markdown-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.markdown$" . markdown-mode) auto-mode-alist))
 
 ;; Tab completion
 ;; http://www.emacsblog.org/2007/03/12/tab-completion-everywhere/
@@ -96,4 +98,5 @@
 (fset 'sort-todo
       [?\M-< ?\C-  ?\M-> ?\M-x ?s ?o ?r ?t ?- ?l ?i ?n ?e ?s return])
 
-
+;; Build tags automatically
+(setq rinari-tags-file-name "TAGS")
