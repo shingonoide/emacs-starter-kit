@@ -103,3 +103,9 @@
 
 ;; Build tags automatically
 (setq rinari-tags-file-name "TAGS")
+
+;; Unbind arrow keys to learn the emacs movement keys better
+(global-set-key [up] nil)
+(global-set-key [down] nil)
+(global-set-key [left] nil)
+(global-set-key [right] nil)
