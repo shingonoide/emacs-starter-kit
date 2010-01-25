@@ -35,6 +35,9 @@
 ; no autofills please
 (setq auto-fill-mode 0)
 
+; Always highlight the current line
+(global-hl-line-mode 1)
+
 ; format the title-bar to always include the buffer name
 (setq frame-title-format (list "" "emacs" ": %f" ))
 
