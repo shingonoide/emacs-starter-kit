@@ -99,7 +99,7 @@
 
 ;; Emacs macro to sort the todo list
 (fset 'sort-todo
-      [?\M-< ?\C-  ?\M-> ?\M-x ?s ?o ?r ?t ?- ?l ?i ?n ?e ?s return])
+      [?\M-< ?\C-  ?\M-> ?\M-x ?s ?o ?r ?t ?- ?l ?i ?n ?e ?s return ?\M-<])
 
 ;; Build tags automatically
 (setq rinari-tags-file-name "TAGS")
