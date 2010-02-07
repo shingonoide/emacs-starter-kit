@@ -35,9 +35,15 @@
 ;; backport some functionality to Emacs 22 if needed
 (require 'dominating-file)
 
+;(load-file "~/.emacs.d/elpa-to-submit/nxhtml/util/desktop.el")
+;; use only one desktop
+;(setq desktop-path '("~/.emacs.d/"))
+;(setq desktop-dirname "~/.emacs.d/")
+;(setq desktop-base-file-name "emacs-desktop")
+
 ;; this must be loaded before ELPA since it bundles its own
 ;; out-of-date js stuff. TODO: fix it to use ELPA dependencies
-(load "elpa-to-submit/nxhtml/autostart")
+(load "nxhtml/autostart")
 
 ;; Load up ELPA, the package manager
 
@@ -85,3 +91,4 @@
     (load
      (expand-file-name "~/.emacs.d/elpa/package.el"))
   (package-initialize))
+

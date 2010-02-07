@@ -80,20 +80,20 @@
 ;; http://www.emacsblog.org/2007/03/12/tab-completion-everywhere/
 (global-set-key [(tab)] 'smart-tab)
 (defun smart-tab ()
-  "This smart tab is minibuffer compliant: it acts as usual in
-    the minibuffer. Else, if mark is active, indents region. Else if
-    point is at the end of a symbol, expands it. Else indents the
-    current line."
-  (interactive)
-  (if (minibufferp)
-      (unless (minibuffer-complete)
-        (dabbrev-expand nil))
-    (if mark-active
-        (indent-region (region-beginning)
-                       (region-end))
-      (if (looking-at "\\_>")
-          (dabbrev-expand nil)
-        (indent-for-tab-command)))))
+ "This smart tab is minibuffer compliant: it acts as usual in
+   the minibuffer. Else, if mark is active, indents region. Else if
+   point is at the end of a symbol, expands it. Else indents the
+   current line."
+ (interactive)
+ (if (minibufferp)
+     (unless (minibuffer-complete)
+       (dabbrev-expand nil))
+   (if mark-active
+       (indent-region (region-beginning)
+                      (region-end))
+     (if (looking-at "\\_>")
+         (dabbrev-expand nil)
+       (indent-for-tab-command)))))
 
 
 (add-to-list 'auto-mode-alist '("\\.liquid$" . nxhtml-mode))
@@ -104,12 +104,20 @@
   (interactive)
   (ansi-term "/bin/zsh"))
 
+(setq ruby-insert-encoding-magic-comment nil)
+
+(load-file "~/Repositories/Terceiros/cucumber.el/feature-mode.el")
+
+;; Rinari
+(add-to-list 'load-path "~/.emacs.d/rinari")
+(require 'rinari)
+
 ;; geben debug
-(add-to-list 'load-path "/Users/shingo/elisp/geben")
-(add-to-list 'load-path "/Users/shingo/elisp/geben/gud")
+;; (add-to-list 'load-path "/Users/shingo/elisp/geben")
+;; (add-to-list 'load-path "/Users/shingo/elisp/geben/gud")
 
 
-(autoload 'geben "geben" "PHP Debugger on Emacs" t)
+;; (autoload 'geben "geben" "PHP Debugger on Emacs" t)
 
 ;; (load-file "~/.emacs.d/elpa/emms-3.0/emms.el")
 ;; (require 'emms-setup) (emms-devel) (emms-default-players)
@@ -124,3 +132,44 @@
 ;; (load-file "~/elisp/ecb/ecb.el")
 ;; (require 'ecb)
 
+;; wanderlust
+;;(autoload 'wl "wl" "Wanderlust" t)
+;;(autoload 'wl-other-frame "wl" "Wanderlust on new frame." t)
+;;(autoload 'wl-draft "wl-draft" "Write draft with Wanderlust." t)
+
+;; IMAP
+;;(setq elmo-imap4-default-server "imap.gmail.com")
+;;(setq elmo-imap4-default-user "shingonoide@gmail.com") 
+;;(setq elmo-imap4-default-authenticate-type 'clear) 
+;;(setq elmo-imap4-default-port '993)
+;;(setq elmo-imap4-default-stream-type 'ssl)
+
+;;(setq elmo-imap4-use-modified-utf7 t) 
+
+;; SMTP
+;;(setq wl-smtp-connection-type 'starttls)
+;;(setq wl-smtp-posting-port 587)
+;;(setq wl-smtp-authenticate-type "plain")
+;;(setq wl-smtp-posting-user "shingonoide")
+;;(setq wl-smtp-posting-server "smtp.gmail.com")
+;;(setq wl-local-domain "gmail.com")
+
+;;(setq wl-default-folder "%inbox")
+;;(setq wl-default-spec "%")
+;;(setq wl-draft-folder "%[Gmail]/Drafts") ; Gmail IMAP
+;;(setq wl-trash-folder "%[Gmail]/Trash")
+
+;;(setq wl-folder-check-async t) 
+
+;;(setq elmo-imap4-use-modified-utf7 t)
+
+;;(autoload 'wl-user-agent-compose "wl-draft" nil t)
+;;(if (boundp 'mail-user-agent)
+;;    (setq mail-user-agent 'wl-user-agent))
+;;(if (fboundp 'define-mail-user-agent)
+;;    (define-mail-user-agent
+;;      'wl-user-agent
+;;      'wl-user-agent-compose
+;;      'wl-draft-send
+;;      'wl-draft-kill
+;;      'mail-send-hook))
