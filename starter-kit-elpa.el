@@ -5,11 +5,8 @@
 (defvar starter-kit-packages (list 'idle-highlight
                                    'ruby-mode
                                    'inf-ruby
-                                   'js2-mode
                                    'css-mode
-                                   ;; 'nxml
-                                   'gist
-                                   'paredit)
+                                   'gist)
   "Libraries that should be installed by default.")
 
 (defun starter-kit-elpa-install ()
@@ -39,5 +36,9 @@ just have to assume it's online."
 (when (esk-online?)
   (unless package-archive-contents (package-refresh-contents))
   (starter-kit-elpa-install))
+
+;; Workaround for an ELPA bug that people are reporting but I've been
+;; unable to reproduce:
+(autoload 'paredit-mode "paredit")
 
 (provide 'starter-kit-elpa)
