@@ -105,10 +105,10 @@
 (setq rinari-tags-file-name "TAGS")
 
 ;; Unbind arrow keys to learn the emacs movement keys better
-(global-set-key [up] nil)
-(global-set-key [down] nil)
-(global-set-key [left] nil)
-(global-set-key [right] nil)
+;(global-set-key [up] nil)
+;(global-set-key [down] nil)
+;(global-set-key [left] nil)
+;(global-set-key [right] nil)
 
 (setenv "ESHELL" (expand-file-name "~/bin/eshell"))
 
@@ -218,3 +218,11 @@
 ;;      'wl-draft-send
 ;;      'wl-draft-kill
 ;;      'mail-send-hook))
+
+;; Common desktop settings
+(load "desktop.el")
+
+;; (set-default-font "Bitstream Vera Sans Mono-11")
+;; (add-to-list 'default-frame-alist '(font . "Bitstream Vera Sans Mono-11"))
+;; (set-default-font "inconsolata")
+;; (add-to-list 'default-frame-alist '(font . "inconsolata"))
