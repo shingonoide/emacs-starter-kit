@@ -52,9 +52,9 @@
 
 (eval-when-compile (require 'cl))
 (eval-when-compile (add-to-list 'load-path default-directory load-path))
-(eval-when-compile (require 'fupd))
+(eval-when-compile (require 'fupd nil t))
 ;;(require 'html-move)
-(eval-when-compile (require 'html-site))
+(eval-when-compile (require 'html-site nil t))
 ;;(require 'dom)
 (require 'xml)
 
@@ -122,6 +122,7 @@ Return the file name."
          )
     (expand-file-name "html-toc" this-dir)))
 
+;;;###autoload
 (defgroup html-toc nil
   "Customization group for html-toc."
   :group 'nxhtml)

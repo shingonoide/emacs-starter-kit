@@ -57,9 +57,10 @@
       (require 'w32shell nil t))))
 
 
-(eval-when-compile (require 'html-site))
+(eval-when-compile (require 'html-site nil t))
 (require 'compile)
 
+;;;###autoload
 (defgroup html-chklnk nil
   "Customization group for html-chklnk."
   :group 'nxhtml)

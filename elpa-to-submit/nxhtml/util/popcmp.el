@@ -43,8 +43,10 @@
 ;;
 ;;; Code:
 
-(eval-when-compile (require 'ourcomments-util))
+(eval-when-compile (require 'cl))
+(eval-when-compile (require 'ourcomments-util nil t))
 
+;;;###autoload
 (defgroup popcmp nil
   "Customization group for popup completion."
   :tag "Completion Style \(popup etc)"
@@ -80,9 +82,6 @@
 
 
 
-
-
-;;(popcmp-set-completion-style 'company-mode)
 (defun popcmp-set-completion-style (val)
   "Internal use, set `popcmp-completion-style' to VAL."
   (assert (memq val '(popcmp-popup emacs-default company-mode anything)) t)
@@ -118,6 +117,7 @@
     (company-mode 1)
     (company-set-major-mode-backend)))
 
+;;;###autoload
 (defcustom popcmp-completion-style (cond
                                     ;;((and (fboundp 'global-company-mode) 'company-mode) 'company-mode)
                                     (t 'popcmp-popup))
@@ -338,6 +338,8 @@ This works in the same circumstances as
         completion))))
 
 (defvar popcmp-in-buffer-allowed nil)
+
+;;;###autoload
 (defun popcmp-completing-read (prompt
                               table
                               &optional predicate require-match
