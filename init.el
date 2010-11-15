@@ -8,6 +8,7 @@
 ;; same way that the noonday sun does the stars. It is not just bigger
 ;; and brighter; it simply makes everything else vanish."
 ;; -Neal Stephenson, "In the Beginning was the Command Line"
+(modify-frame-parameters nil '((wait-for-wm . nil)))
 
 ;; Turn off mouse interface early in startup to avoid momentary display
 ;; You really don't need these; trust me.
