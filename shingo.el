@@ -110,7 +110,7 @@
 ;(global-set-key [left] nil)
 ;(global-set-key [right] nil)
 
-(setenv "ESHELL" (expand-file-name "~/bin/eshell"))
+;; (setenv "ESHELL" (expand-file-name "~/bin/eshell"))
 
 ;; shell-mode
 (defun shell ()
@@ -120,13 +120,15 @@
 (setq ruby-insert-encoding-magic-comment nil)
 
 (load-file "~/Repositories/Terceiros/cucumber.el/feature-mode.el")
+(load-file "~/Repositories/Terceiros/rvm.el/rvm.el")
+(require 'rvm)
 
 ;; Rinari
 (add-to-list 'load-path "~/.emacs.d/rinari")
 (require 'rinari)
 
 ;; geben debug
-;; (add-to-list 'load-path "/Users/shingo/elisp/geben")
+(add-to-list 'load-path "~/.emacs.d/vendor/geben-0.26")
 ;; (add-to-list 'load-path "/Users/shingo/elisp/geben/gud")
 
 ;; Load CEDET.
@@ -162,7 +164,7 @@
 ;; Enable SRecode (Template management) minor-mode.
 ;; (global-srecode-minor-mode 1)
 
-;; (autoload 'geben "geben" "PHP Debugger on Emacs" t)
+(autoload 'geben "geben" "PHP Debugger on Emacs" t)
 
 
 ;; (load-file "~/.emacs.d/elpa/emms-3.0/emms.el")
@@ -224,5 +226,87 @@
 
 ;; (set-default-font "Bitstream Vera Sans Mono-11")
 ;; (add-to-list 'default-frame-alist '(font . "Bitstream Vera Sans Mono-11"))
-;; (set-default-font "inconsolata")
-;; (add-to-list 'default-frame-alist '(font . "inconsolata"))
+(set-default-font "Inconsolata-13")
+(add-to-list 'default-frame-alist '(font . "Inconsolata-13"))
+
+;; (require 'rdebug)
+
+;;
+(custom-set-variables
+   '(ispell-local-dictionary-alist
+     (quote (("portugues" "[A-Za-zàèìòùÀÈÌÒÙáéíóúÁÉÍÓÚãõÃÕâêîôûÂÊÎÔÛçÇ]"
+                          "[^A-Za-zàèìòùÀÈÌÒÙáéíóúÁÉÍÓÚãõÃÕâêîôûÂÊÎÔÛçÇ]"
+                          "[-]" nil nil "~latin1" iso-8859-1)
+             ("portutex"  "[A-Za-z\\\\\\\\]"
+                          "[^A-Za-z\\\\\\\\]"
+                          "[---~`'^{}]" nil nil "~tex" iso-8859-1)))))
+
+
+;; twit.el
+;;(add-to-list 'load-path "~/.emacs.d/vendor/twit.el/")
+
+;;(autoload 'twit-show-recent-tweets	"twit" "" t) ; most recent direct tweets (!)
+;;(autoload 'twit-show-at-tweets		"twit" "" t))  ; directed to you
+;;(autoload 'twit-show-friends 		"twit" "" t))     ; your friends
+;;(autoload 'twit-show-followers 		"twit" "" t) ; your followers
+
+;;(autoload 'twit-follow-recent-tweets	"twit" "" t) ; at idle, check at background
+
+;;(autoload 'twit-post			"twit" "" t)
+;;(autoload 'twit-post-region		"twit" "" t)
+;;(autoload 'twit-post-buffer		"twit" "" t)
+;;(autoload 'twit-direct			"twit" "" t) ; tweet to person
+
+;;(autoload 'twit-add-favorite		"twit" "" t) ; Add to favourite: (*) star
+;;(autoload 'twit-remove-favorite 	"twit" "" t)
+
+;;(autoload 'twit-add-friend  		"twit" "" t) ; follow a friend
+;;(autoload 'twit-remove-friend 		"twit" "" t) ; emove a frienda
+
+;; Customize twit-multi-accounts in order to use these: ((user . pass) ...)
+;;(autoload 'twit-switch-account 		"twit" "" t)
+;;(autoload 'twit-direct-with-account  	"twit" "" t)
+;;(autoload 'twit-post-with-account 	"twit" "" t)
+
+;;(autoload 'twit-show-direct-tweets-with-account "twit" "" t)
+;;(autoload 'twit-show-at-tweets-with-account 	"twit" "" t)
+
+;;(setq twit-user "shingonoide")
+;; (setq twit-pass "pass")
+
+;; Key bindings examples
+;; Requires that autoloads above have been added to ~/.emacs
+
+;;(global-set-key "\C-cTT"  'twit-follow-recent-tweets) ; (s)how (T)weets
+;;(global-set-key "\C-cTst" 'twit-follow-recent-tweets) ; (s)how (t)weets
+;;(global-set-key "\C-cTsa" 'twit-show-at-tweets)       ; (s)how (a)t
+;;(global-set-key "\C-cTsf" 'twit-show-at-tweets)       ; (s)how (f)riends
+;;(global-set-key "\C-cTsl" 'twit-show-at-tweets)       ; (s)how fo(l)lowers
+
+;;(global-set-key "\C-cTpp" 'twit-post)		      ; (p)ost
+;;(global-set-key "\C-cTpr" 'twit-post-region)	      ; (p)post (r)egion
+;;(global-set-key "\C-cTpb" 'twit-post-buffer)	      ; (p)post (b)uffer
+;;(global-set-key "\C-cTpr" 'twit-direct)		      ; (p)post (d)irect
+;;(global-set-key "\C-cTfa" 'twit-add-favorite)	      ; (f)avorite (a)dd
+;;(global-set-key "\C-cTfr" 'twit-remove-favorite)      ; (f)avorite (r)emove
+
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/vala"))
+(autoload 'vala-mode "vala-mode" "Major mode for editing Vala code." t)
+(add-to-list 'auto-mode-alist '("\\.vala$" . vala-mode))
+(add-to-list 'auto-mode-alist '("\\.vapi$" . vala-mode))
+(add-to-list 'file-coding-system-alist '("\\.vala$" . utf-8))
+(add-to-list 'file-coding-system-alist '("\\.vapi$" . utf-8))
+
+;; (add-hook 'vala-mode-hook #'wisent-csharp-default-setup)
+
+(add-to-list 'load-path "~/.emacs.d/vendor/drupal")
+; My PHP setup
+(require 'setup-php)
+(setup-php)
+
+(add-to-list 'load-path "~/.emacs.d/vendor/rspec-mode")
+(require 'rspec-mode)
+
+(add-to-list 'load-path "~/.emacs.d/vendor/po-mode")
+(autoload 'po-mode "po-mode+"
+  "Major mode for translators to edit PO files" t)
