@@ -4163,6 +4163,7 @@ See `nxhtmlmaint-start-byte-compilation' for byte compiling.
 ;;;;;;  "../../../../../../.emacs.d/elpa-to-submit/nxhtml/tests/inemacs/bug1013.el"
 ;;;;;;  "../../../../../../.emacs.d/elpa-to-submit/nxhtml/tests/mumamo-test.el"
 ;;;;;;  "../../../../../../.emacs.d/elpa-to-submit/nxhtml/tests/nxhtmltest-helpers.el"
+;;;;;;  "../../../../../../.emacs.d/elpa-to-submit/nxhtml/tests/temp-test.el"
 ;;;;;;  "../../../../../../.emacs.d/elpa-to-submit/nxhtml/util/appmenu-fold.el"
 ;;;;;;  "../../../../../../.emacs.d/elpa-to-submit/nxhtml/util/css-simple-completion.el"
 ;;;;;;  "../../../../../../.emacs.d/elpa-to-submit/nxhtml/util/custsets.el"
@@ -4177,7 +4178,7 @@ See `nxhtmlmaint-start-byte-compilation' for byte compiling.
 ;;;;;;  "../../../../../../.emacs.d/elpa-to-submit/nxhtml/util/rxi.el"
 ;;;;;;  "../../../../../../.emacs.d/elpa-to-submit/nxhtml/util/useful-commands.el"
 ;;;;;;  "../../../../../../.emacs.d/elpa-to-submit/nxhtml/web-autoload.el")
-;;;;;;  (19311 33306 455098))
+;;;;;;  (19464 41675 811795))
 
 ;;;***
 
