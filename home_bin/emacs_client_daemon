@@ -1,0 +1,5 @@
+#!/bin/sh
+
+emacs_daemon.sh
+emacsclient.emacs23 -nc $1
+
