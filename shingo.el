@@ -119,8 +119,8 @@
 
 (setq ruby-insert-encoding-magic-comment nil)
 
-(load-file "~/Repositories/Terceiros/cucumber.el/feature-mode.el")
-(load-file "~/Repositories/Terceiros/rvm.el/rvm.el")
+(load-file "~/.emacs.d/vendor/cucumber.el.git/feature-mode.el")
+(load-file "~/.emacs.d/vendor/rvm.el.git/rvm.el")
 (require 'rvm)
 
 ;; Rinari

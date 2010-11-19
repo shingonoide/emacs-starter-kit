@@ -1,0 +1,6 @@
+[submodule "vendor/cucumber.el.git"]
+	path = vendor/cucumber.el.git
+	url = git://github.com/michaelklishin/cucumber.el.git
+[submodule "vendor/rvm.el.git"]
+	path = vendor/rvm.el.git
+	url = git://github.com/senny/rvm.el.git
